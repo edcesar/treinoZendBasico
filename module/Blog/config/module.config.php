@@ -3,7 +3,7 @@ namespace Blog;
 
 use Blog\Controller\BlogController;
 use Blog\Categories;
-
+use Blog\CategoriesFactory;
 
 return [
 	 'router' => array(
@@ -46,15 +46,22 @@ return [
 
       'service_manager' => [
         'services' => [
+        /*
             'categories' => [
+                'Services',
                 'PHP',
                 'Java',
                 'Pytton',
                 'JavaScript',   
-            ],
+
+          ], 
+        */ 
         ],
         'invokables' => [
-            Categories::class => Categories::class 
+          #  Categories::class => Categories::class 
+        ],
+        'factories' => [
+            Categories::class => CategoriesFactory::class
         ]
       ]
 ];
