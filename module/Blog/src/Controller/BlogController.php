@@ -9,12 +9,7 @@ class BlogController extends AbstractActionController
 
 	public function indexAction()
 	{
-		$categorias = [
-			'politica',
-			'esporte',
-			'novidades',
-			'tecnologia',
-		];
+		$categorias = $this->getServiceLocator()->get('categories');
 		
 		return new ViewModel(['categorias' => $categorias]);
 	}
