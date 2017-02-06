@@ -9,7 +9,13 @@ class BlogController extends AbstractActionController
 
 	public function indexAction()
 	{
+		$categorias = [
+			'politica',
+			'esporte',
+			'novidades',
+			'tecnologia',
+		];
 		
-		return new ViewModel();
+		return new ViewModel(['categorias' => $categorias]);
 	}
 }
