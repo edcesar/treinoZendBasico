@@ -11,3 +11,9 @@
 <?php //  echo $this->htmlList($categorias); ?>
 
 
+<ul>
+  <?php foreach ($result as $categoria): ?>
+	<li><?= $categoria['name']; ?></li>
+  <?php endforeach; ?>
+</ul>
+
