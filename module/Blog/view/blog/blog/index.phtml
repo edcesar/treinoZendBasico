@@ -1,9 +1,11 @@
 <h1>Categorias</h1>
 
 <ul>
-  <?php foreach ($categorias as $categoria): ?>
+  <?php foreach ($categorias->getCategories() as $categoria): ?>
 	<li><?= $categoria; ?></li>
   <?php endforeach; ?>
 </ul>
 
-<?php echo $this->htmlList($categorias); ?>
+<?php  echo $this->htmlList($categorias->getCategories()); ?>
+
+

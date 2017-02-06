@@ -2,6 +2,8 @@
 namespace Blog;
 
 use Blog\Controller\BlogController;
+use Blog\Categories;
+
 
 return [
 	 'router' => array(
@@ -51,6 +53,9 @@ return [
                 'JavaScript',   
             ],
         ],
-      ],
+        'invokables' => [
+            Categories::class => Categories::class 
+        ]
+      ]
 ];
 
