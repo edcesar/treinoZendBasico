@@ -12,6 +12,7 @@ class BlogController extends AbstractActionController
 
 	public function indexAction()
 	{
+		/*
 		$categorias = $this->getServiceLocator()->get(Categories::class);
 	//	$categorias = $categorias->getCategories()[0]->getName();
 		$categorias = $categorias->getCategories();;
@@ -30,5 +31,18 @@ class BlogController extends AbstractActionController
 		$CategoriesTable = $categoriesTable->select();
 
 		return new ViewModel(['categorias' => $categorias, 'CategoriesTable' => $CategoriesTable]);
+		*/
+
+		/*
+		$categorias = $this->getServiceLocator()->get(Categories::class);
+		$categorias = $categorias->select();
+		*/
+		
+
+		$categorias = $this->getServiceLocator()
+			->get(Categories::class)
+			->select();
+		
+		return new ViewModel(['CategoriesTable' => $categorias]);
 	}
 }
