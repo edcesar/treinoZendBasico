@@ -5,7 +5,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Blog\Categories;
 use Zend\Db\Sql\Sql;
-
+use Zend\Db\TableGateway\TableGateway;
 
 class BlogController extends AbstractActionController
 {
@@ -26,6 +26,9 @@ class BlogController extends AbstractActionController
 	//	$categorias = new \Blog\CategoriesFactory();
 	//	$categorias = $categorias->createService($this->getServiceLocator());
 	
-		return new ViewModel(['categorias' => $categorias, 'result' => $result]);
+		$categoriesTable = new TableGateway('categories', $adapter);
+		$CategoriesTable = $categoriesTable->select();
+
+		return new ViewModel(['categorias' => $categorias, 'CategoriesTable' => $CategoriesTable]);
 	}
 }
